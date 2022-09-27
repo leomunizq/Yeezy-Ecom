@@ -18,7 +18,7 @@
   <body>
     <!--===== HEADER =====-->
     <header class="l-header" id="header">
-      <nav class="nav bg-grid">
+      <nav class="nav bd-grid">
         <div class="nav__toggle" id="nav-toggle">
           <i class="bx bxs-grid"></i>
         </div>
@@ -28,7 +28,7 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+              <a href="./index.html" class="nav__link">Home</a>
             </li>
             <li class="nav__item">
               <a href="#featured" class="nav__link">Featured</a>
@@ -36,12 +36,17 @@
             <li class="nav__item">
               <a href="#women" class="nav__link">Women</a>
             </li>
-            <li class="nav__item"><a href="#new" class="nav__link">New</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Shop</a></li>
+            <li class="nav__item">
+              <a href="#new" class="nav__link">New</a>
+            </li>
+            <li class="nav__item">
+              <a href="/shop.html" class="nav__link active">Shop</a>
+            </li>
           </ul>
         </div>
+
         <div class="nav__shop">
-          <i class="bx bx-shopping-bag"></i>
+          <i class="bx bxs-shopping-bag"></i>
         </div>
       </nav>
     </header>
@@ -51,8 +56,10 @@
       <section class="home" id="home">
         <div class="home__container bd-grid">
           <div class="home__sneaker">
-            <div class="home__shape"></div>
-            <img src="/assets/img/imghome.png" alt="" class="home__img" />
+            <div class="home__shape "></div>
+            <div class="float-animation">
+            <img src="/assets/img/imghome.png" id="myImg" alt="" class="home__img" />
+          </div>
           </div>
           <div class="home__data">
             <span class="home__new">New In</span>
@@ -72,7 +79,7 @@
         <h2 class="section-title">FEATURED</h2>
 
         <div class="featured__container bd-grid">
-          <article class="sneaker">
+          <article class="sneaker1">
             <div class="sneaker__sale">Sale</div>
             <img src="/assets/img/featured1.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Boost 350 V2 Bone</span>
@@ -82,7 +89,7 @@
             ></a>
           </article>
 
-          <article class="sneaker">
+          <article class="sneaker2">
             <div class="sneaker__sale">Sale</div>
             <img src="/assets/img/featured2.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Boost 350 V2 Tail Light</span>
@@ -92,7 +99,7 @@
             ></a>
           </article>
 
-          <article class="sneaker">
+          <article class="sneaker3">
             <div class="sneaker__sale">Sale</div>
             <img src="/assets/img/featured3.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Boost 350 V2 Cinder</span>
@@ -153,7 +160,7 @@
             ></a>
           </article>
 
-          <article class="sneaker">
+          <article class="sneaker1">
             <img src="/assets/img/women2.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Boost 350 V2 Cinder</span>
             <span class="sneaker__price">$xxx.xx</span>
@@ -162,7 +169,7 @@
             ></a>
           </article>
 
-          <article class="sneaker">
+          <article class="sneaker2">
             <img src="/assets/img/women3.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Boost 350 V2 Cinder</span>
             <span class="sneaker__price">$xxx.xx</span>
@@ -171,7 +178,7 @@
             ></a>
           </article>
 
-          <article class="sneaker">
+          <article class="sneaker3">
             <img src="/assets/img/women4.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Boost 350 V2 Cinder</span>
             <span class="sneaker__price">$xxx.xx</span>
@@ -182,15 +189,216 @@
         </div>
       </section>
       <!--===== OFFER =====-->
+      <section class="offer section">
+        <div class="offer__container bd-grid">
+          <div class="offer__data">
+            <h3 class="offer__title">50%off</h3>
+            <p class="offer__description">In Adidas Superstar sneakers</p>
+            <a href="#" class="button">Shop Now</a>
+          </div>
 
+          <img src="assets/img/offert.png" alt="" class="offer__img" />
+        </div>
+      </section>
       <!--===== NEW COLLECTION =====-->
 
+      <section class="new section" id="new">
+        <h2 class="section-title">NEW COLLECTION</h2>
+
+        <div class="new__container bd-grid">
+          <div class="new__mens">
+            <img src="/assets/img/new1.png" alt="" class="new__mens-img float-animation" />
+            <h3 class="new__title">Mens Shoes</h3>
+            <span class="new__price">From $79.99</span>
+            <a href="#" class="button-light"
+              >View Collection <i class="bx bx-right-arrow-alt button-icon"></i
+            ></a>
+          </div>
+
+
+          <div class="new__sneaker ">
+            <div class="new__sneaker-card">
+              <img src="/assets/img/new2.png" alt="" class="new__sneaker-img">
+              <div class="new__sneaker-overlay">
+                <a href="#" class="button">Add to Cart</a>
+              </div>
+            </div>
+
+            <div class="new__sneaker-card">
+              <img src="/assets/img/new3.png" alt="" class="new__sneaker-img">
+              <div class="new__sneaker-overlay">
+                <a href="#" class="button">Add to Cart</a>
+              </div>
+            </div>
+
+            <div class="new__sneaker-card1">
+              <img src="/assets/img/new4.png" alt="" class="new__sneaker-img">
+              <div class="new__sneaker-overlay">
+                <a href="#" class="button">Add to Cart</a>
+              </div>
+            </div>
+
+            <div class="new__sneaker-card1">
+              <img src="/assets/img/new5.png" alt="" class="new__sneaker-img">
+              <div class="new__sneaker-overlay">
+                <a href="#" class="button">Add to Cart</a>
+              </div>
+            </div>
+
+
+        </div>
+      </section>
+
       <!--===== NEWSLETTER =====-->
+      <section class="newsletter section">
+        <div class="newsletter__container bd-grid">
+          <div>
+            <h3 class="newsletter__title">
+              Subscribe And Get <br />
+              10% OFF
+            </h3>
+
+            <p class="newsletter__description">
+              Get 10% discount on all products
+            </p>
+          </div>
+
+          <form action="" class="newsletter__subscribe">
+            <input
+              type="text"
+              placeholder="demo@email.com"
+              class="newsletter__input"
+            />
+            <a href="#" class="button">Subscribe</a>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!--===== FOOTER =====-->
+    <footer class="footer section">
+      <div class="footer__container bd-grid">
+        <div class="footer__box">
+          <h3 class="footer__title">Roby</h3>
+          <p class="footer__description">New Collection of shoes 2022</p>
+        </div>
+
+        <div class="footer__box">
+          <h3 class="footer__title">Explore</h3>
+          <ul>
+            <li><a href="#home" class="footer__link">Home</a></li>
+            <li><a href="#featured" class="footer__link">Featured</a></li>
+            <li><a href="#women" class="footer__link">Women</a></li>
+            <li><a href="#men" class="footer__link">New</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__box">
+          <h3 class="footer__title">Support</h3>
+          <ul>
+            <li><a href="#" class="footer__link">Product Help</a></li>
+            <li><a href="#" class="footer__link">Customer Care</a></li>
+            <li><a href="#" class="footer__link">Authorized Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__box">
+          <a href="#" class="footer__social"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="footer__social"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          <a href="#" class="footer__social"><i class="bx bxl-twitter"></i></a>
+        </div>
+      </div>
+
+      <p class="footer__copy">&#169; 2022 Bedimcode. All right reserved</p>
+    </footer>
 
     <!--===== MAIN JS =====-->
+    <script src="https://unpkg.com/scrollreveal@4"></script>
     <script src="/assets/js/main.js"></script>
+
+<script>
+ window.sr = ScrollReveal({ reset: false })
+
+sr.reveal('.home__img', {
+  origin: 'right',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.home__shape', {
+  origin: 'left',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.home__data', {
+  origin: 'bottom',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.sneaker1', {
+  origin: 'right',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.sneaker2', {
+  origin: 'right',
+  duration: 1700,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.sneaker3', {
+  origin: 'right',
+  duration: 2200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+ScrollReveal().reveal('.collection__card', {
+    delay: 200,
+    easing: 'cubic-bezier(0.5, 0, 0, 1)'
+  })
+
+
+  sr.reveal('.new__mens', {
+  origin: 'top',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+
+  sr.reveal('.new__sneaker-card', {
+  origin: 'right',
+  duration: 1700,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.new__sneaker-card1', {
+  origin: 'right',
+  duration: 2200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+</script>
   </body>
 </html>
