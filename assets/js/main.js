@@ -1,7 +1,132 @@
+/*===== CHANGE COLOR HEADER =====*/
+window.onscroll = function () {
+  const nav = document.getElementById('header')
+  if (this.scrollY >= 200) {
+    nav.classList.add('scroll-header')
+  } else {
+    nav.classList.remove('scroll-header')
+  }
+}
+
+/*===== SCROLL REVEAL =====*/
+window.sr = ScrollReveal({ reset: false })
+
+sr.reveal('.home__img', {
+  origin: 'right',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.home__shape', {
+  origin: 'left',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.home__data', {
+  origin: 'bottom',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.sneaker1', {
+  origin: 'right',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.sneaker2', {
+  origin: 'right',
+  duration: 1700,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.sneaker3', {
+  origin: 'right',
+  duration: 2200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+ScrollReveal().reveal('.collection__card', {
+  delay: 200,
+  easing: 'cubic-bezier(0.5, 0, 0, 1)'
+})
+
+sr.reveal('.new__mens', {
+  origin: 'top',
+  duration: 1200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.new__sneaker-card', {
+  origin: 'right',
+  duration: 1700,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+sr.reveal('.new__sneaker-card1', {
+  origin: 'right',
+  duration: 2200,
+  scale: 1,
+  distance: '200px',
+  useDelay: 'once'
+})
+
+/*===== Initialize Swiper =====*/
+var swiper = new Swiper('.mySwiper', {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  breakpoints: {
+    240: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    470: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 30
+    }
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  }
+})
+swiper.init()
+
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
-  const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+  const toggle = document.getElementById(toggleId)
+  nav = document.getElementById(navId)
+
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
       nav.classList.toggle('show')
@@ -18,15 +143,16 @@ navMenu = document.getElementById('nav-menu')
 function linkAction() {
   navMenu.classList.remove('show')
 }
+
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*===== SCROLL SECTIONS ACTIVE LINK =====*/
-const sections = document.querySelectorAll('section[id]')
+const sections = document.querySelectorAll(`section[id]`)
 
 window.addEventListener('scroll', scrollActive)
 
 function scrollActive() {
-  const scrollY = window.pageYOffset
+  const scrollV = window.pageYOffset
 
   sections.forEach(current => {
     const sectionHeight = current.offsetHeight
@@ -37,6 +163,10 @@ function scrollActive() {
       document
         .querySelector('.nav__menu a[href*=' + sectionId + ']')
         .classList.add('active')
+
+      document
+        .querySelector('.nav__menu a[href*=' + sectionId + ']')
+        .classList.add('remove')
     } else {
       document
         .querySelector('.nav__menu a[href*=' + sectionId + ']')
@@ -44,157 +174,3 @@ function scrollActive() {
     }
   })
 }
-
-/*===== CHANGE COLOR HEADER =====*/
-window.onscroll = function () {
-  const nav = document.getElementById('header')
-  if (this.scrollY >= 200) {
-    nav.classList.add('scroll-header')
-  } else {
-    nav.classList.remove('scroll-header')
-  }
-}
-
-/*===== SPIN IMAGE =====*/
-
-$(function () {
-  var num = 36 // the total number of images
-
-  // Preload all the images into hidden div
-  for (var i = 01; i <= num; i++) {
-    var img = document.createElement('img')
-    img.src = '/assets/img/spin1/img' + i + '.jpg'
-    document.getElementById('preload-imgs').appendChild(img)
-  }
-
-  // Control swipes using jquery.touchSwipe.min.js
-  // http://labs.rampinteractive.co.uk/touchSwipe/
-  var swipeOptions = {
-    triggerOnTouchEnd: true,
-    swipeStatus: swipeStatus,
-    allowPageScroll: 'vertical',
-    threshold: 75
-  }
-
-  $(function () {
-    imgs = $('.home__shape') // the element that will be swipeable
-    imgs.swipe(swipeOptions)
-  })
-
-  function swipeStatus(event, phase, direction, distance) {
-    var duration = 0
-    if (direction == 'left') {
-      changeImg(distance)
-    } else if (direction == 'right') {
-      changeImgR(-distance)
-    }
-  }
-
-  function changeImg(imgNum) {
-    // divide by 8 (or any number) to spread
-    // it out so it doesn't load new img
-    // every single px of swipe distance
-    imgNum = Math.floor(imgNum / 8)
-
-    if (imgNum < 1) {
-      imgNum += num
-    }
-    if (imgNum > num) {
-      imgNum -= num
-    }
-
-    // change the image src
-    document.getElementById('myImg').src =
-      "/Users/leonardomuniz/Documents/projetos/Yeezy-Ecom/assets/img/spin1/img'+i+'.jpg"
-  }
-
-  function changeImgR(imgNum) {
-    // divide by 8 (or any number) to spread
-    // it out so it doesn't load new img
-    // every single px of swipe distance
-    imgNum = Math.floor(imgNum / 8)
-
-    var num2 = -Math.abs(num)
-    if (imgNum > num2) {
-      imgNum += num
-    }
-    if (imgNum <= num2) {
-      imgNum += num * 2
-    }
-
-    // change the image src
-    document.getElementById('myImg').src =
-      "/Users/leonardomuniz/Documents/projetos/Yeezy-Ecom/assets/img/spin1/img'+i+'.jpg"
-  }
-})
-
-/*===== SCROOLL REVEAL ANIMATION =====*/
-function teste() {
-  window.sr = ScrollReveal({ reset: false })
-
-  sr.reveal('.home__img', {
-    origin: 'right',
-    duration: 1200,
-    scale: 1,
-    distance: '200px',
-    useDelay: 'once'
-  })
-
-  sr.reveal('.home__shape', {
-    origin: 'left',
-    duration: 1200,
-    scale: 1,
-    distance: '200px',
-    useDelay: 'once'
-  })
-
-  sr.reveal('.home__data', {
-    origin: 'bottom',
-    duration: 1200,
-    scale: 1,
-    distance: '200px',
-    useDelay: 'once'
-  })
-
-  ScrollReveal({ reset: true })
-  ScrollReveal().reveal('.home__sneaker')
-  ScrollReveal().reveal('.sneaker', { delay: 200 })
-  ScrollReveal().reveal('.collection__card', {
-    delay: 200,
-    easing: 'cubic-bezier(0.5, 0, 0, 1)'
-  })
-}
-teste()
-
-/*===== PRODUCT PAGE =====*/
-
-// window.onload = function product() {
-//   const colour_btn_els = document.querySelectorAll('.colours .colour')
-//   const capacity_btn_els = document.querySelectorAll('.capacity .size')
-//   const imagery_el = document.querySelector('.imagery')
-//   const image_el = document.querySelector('.imagery .image')
-
-//   for (let i = 0; i < capacity_btn_els.length; i++) {
-//     let btn = capacity_btn_els[i]
-
-//     btn.addEventListener('click', function () {
-//       document
-//         .querySelector('.capacity .size.selected')
-//         .classList.remove('selected')
-//       this.classList.add('selected')
-//     })
-//   }
-
-//   for (let i = 0; i < colour_btn_els.length; i++) {
-//     let btn = colour_btn_els[i]
-
-//     btn.addEventListener('click', function () {
-//       document
-//         .querySelector('.colours .colour.selected')
-//         .classList.remove('selected')
-//       this.classList.add('selected')
-//       image_el.src = 'assets/images/xr-' + this.dataset.name + '.png'
-//       imagery_el.style.backgroundColor = this.dataset.colour
-//     })
-//   }
-// }
