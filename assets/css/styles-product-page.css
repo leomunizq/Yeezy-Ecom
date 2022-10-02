@@ -14,16 +14,16 @@ main.l-main{
 	background-color: #212121;
 	transition: 0.4s;
 }
-.imagery img {
+.imagery .cloudimage-360 {
 	width: 50%;
 	/* height: 100%; */
 	object-fit: contain;
 	object-position: top;
-	animation: fadein 1s ease-in-out forwards;
+	animation: fadein .1s ease-in-out forwards, float 6s ease-in-out infinite;
 	animation-delay: 0.5s;
 	opacity: 0;
   position: absolute;
-  top: 210px;
+  top: 70px;
 }
 
 .detail {
@@ -123,12 +123,12 @@ button.size.selected::after {
 }
 
 .colours .btn_wrap .glow.selected {
-	background-color: hsl(76deg 60% 65%);
+	background-color: #89cd6d;
 	color: #212121;
 }
 
-.colours .btn_wrap .sulfur.selected {
-	background-color: #747c2d;
+.colours .btn_wrap .beluga.selected {
+	background-color: #706866;
 	color: #fff;
 }
 
@@ -158,3 +158,49 @@ button.size.selected::after {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
 }
+
+
+
+@media screen and (max-width: 768px) {
+	.product-detail {
+		height: auto;
+    flex-direction: column;
+}
+	.imagery {
+		flex: 1 1 100%;
+		width: 100%;
+		padding: 50px 20px;
+		max-height: 400px;
+	}
+	.imagery .cloudimage-360 {
+		width: 100%;
+		top: -100px;
+	}
+	.detail {
+		flex: 1 1 100%;
+		width: 100%;
+		padding: 20px 20px;
+	}
+	.detail h1 {
+    color: #212121;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+	.detail h3 {
+		font-size: 16px;
+    margin-bottom: 10px;
+}
+	.btn_grid {
+    margin: 0px -15px;
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+	.btn_grid .btn_wrap {
+		flex: 1 1 100%;
+		width: 100%;
+	}
+}
+	

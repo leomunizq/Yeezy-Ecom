@@ -9,9 +9,14 @@
 
     <!-- ===== BOX ICONS ===== -->
     <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-      rel="stylesheet"
+    href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    rel="stylesheet"
     />
+    
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
 
     <title>Yeezy's</title>
   </head>
@@ -62,13 +67,13 @@
           </div>
           </div>
           <div class="home__data">
-            <span class="home__new">New In</span>
+            <!-- <span class="home__new">New In</span> -->
             <h1 class="home__title">
               YEEZY BOOST <br />
               SPLY - 350
             </h1>
             <p class="home__description">
-              Explore the new collections of sneakers
+              Explore the new collections of Yeezy
             </p>
             <a href="#" class="button">Explore Now</a>
           </div>
@@ -112,7 +117,9 @@
       </section>
       <!--===== COLLECTION =====-->
       <section class="collection section">
+        <h2 class="section-title">COLLECTION'S</h2>
         <div class="collection__container bd-grid">
+
           <div class="collection__card">
             <div class="collection__data">
               <h3 class="collection__name">Yeezy</h3>
@@ -123,7 +130,7 @@
             </div>
 
             <img
-              src="/assets/img/hands-yeezy.jpeg"
+            src="/assets/img/hands-yeezy2.png"
               alt=""
               class="collection__img"
             />
@@ -139,19 +146,36 @@
             </div>
 
             <img
-              src="/assets/img/hands-yeezy2.png"
+              src="/assets/img/hands-yeezy.png"
               alt=""
               class="collection__img"
             />
+          </div>
+
+          <div class="collection__card">
+            <div class="collection__data">
+              <!-- <h3 class="collection__name">Yeezy</h3>
+              <p class="collection__description">New Collection 2022</p>
+              <a href="#" class="button-ligh"
+                >Buy Now <i class="bx bx-right-arrow-alt button-icon"></i
+              ></a> -->
+            </div>
+
+            <!-- <img
+              src="/assets/img/hands-yeezy2.png"
+              alt=""
+              class="collection__img"
+            /> -->
           </div>
         </div>
       </section>
 
-      <!--===== WOMEN SNEAKERS =====-->
+      <!--=====  SNEAKERS =====-->
       <section class="women section" id="women">
         <h2 class="section-title">YEEZY SLIDER'S</h2>
-        <div class="women__container bd-grid">
-          <article class="sneaker">
+        <div class="women__container bd-grid swiper mySwiper">
+          <div class="swiper-wrapper">
+          <article class="sneaker swiper-slide">
             <img src="/assets/img/slide2.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Slider</span>
             <span class="sneaker__price">$xxx.xx</span>
@@ -160,7 +184,7 @@
             ></a>
           </article>
 
-          <article class="sneaker1">
+          <article class="sneaker swiper-slide">
             <img src="/assets/img/slide1.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Slider</span>
             <span class="sneaker__price">$xxx.xx</span>
@@ -169,7 +193,7 @@
             ></a>
           </article>
 
-          <article class="sneaker2">
+          <article class="sneaker swiper-slide">
             <img src="/assets/img/slide3.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Slider</span>
             <span class="sneaker__price">$xxx.xx</span>
@@ -178,7 +202,7 @@
             ></a>
           </article>
 
-          <article class="sneaker3">
+          <article class="sneaker swiper-slide">
             <img src="/assets/img/slide4.png" alt="" class="sneaker__img" />
             <span class="sneaker__name">Yeezy Slider</span>
             <span class="sneaker__price">$xxx.xx</span>
@@ -186,18 +210,23 @@
               >Add to Cart <i class="bx bx-right-arrow-alt button-icon"></i
             ></a>
           </article>
+
+          
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
       </section>
       <!--===== OFFER =====-->
       <section class="offer section">
         <div class="offer__container bd-grid">
+          <!-- <img src="/assets/img/yeezy-bue.png" alt="" class="offer__img" /> -->
           <div class="offer__data">
-            <h3 class="offer__title">50%off</h3>
-            <p class="offer__description">In Adidas Superstar sneakers</p>
-            <a href="#" class="button">Shop Now</a>
+            <h3 class="offer__title">Yeezy Gap x Balenciaga:</h3>
+            <p class="offer__description">The New colab with Kanye West </p>
+            <!-- <a href="#" class="button">Shop Now</a> -->
           </div>
 
-          <img src="assets/img/offert.png" alt="" class="offer__img" />
         </div>
       </section>
       <!--===== NEW COLLECTION =====-->
@@ -207,9 +236,9 @@
 
         <div class="new__container bd-grid">
           <div class="new__mens">
-            <img src="/assets/img/new1.png" alt="" class="new__mens-img float-animation" />
-            <h3 class="new__title">Mens Shoes</h3>
-            <span class="new__price">From $xxxx</span>
+            <!-- <img src="/assets/img/new1.png" alt="" class="new__mens-img float-animation" /> -->
+            <!-- <h3 class="new__title">Mens Shoes</h3>
+            <span class="new__price">From $xxxx</span> -->
             <a href="#" class="button-light"
               >View Collection <i class="bx bx-right-arrow-alt button-icon"></i
             ></a>
@@ -369,6 +398,7 @@ sr.reveal('.sneaker3', {
   useDelay: 'once'
 })
 
+
 ScrollReveal().reveal('.collection__card', {
     delay: 200,
     easing: 'cubic-bezier(0.5, 0, 0, 1)'
@@ -400,5 +430,21 @@ sr.reveal('.new__sneaker-card1', {
   useDelay: 'once'
 })
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+  });
+</script>
+
   </body>
 </html>

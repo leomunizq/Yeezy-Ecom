@@ -367,6 +367,17 @@ transform: var(--rotate-img); */
   border-radius:.5rem;
   transition: .3s;
 }
+.collection__card:first-child{
+  grid-area: a;
+}
+
+.collection__card:last-child{
+  background-image: url(https://i.pinimg.com/564x/9f/7d/b7/9f7db723e76159a1359de9327d602d97.jpg);
+  background-size: cover;
+  background-position-x: center;
+  grid-area: c;
+
+}
 
 .collection__data{
   align-self: flex-end;
@@ -398,7 +409,10 @@ margin-bottom:.25rem;
 row-gap: 2rem;
 grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
-
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+  color:#41352e;
+}
 /*===== OFFER =====*/
 .offer__container{
   grid-template-columns: 55% 45%;
@@ -406,10 +420,13 @@ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   background-color: var(--dark-color-lighten);
   border-radius: .5rem;
   justify-content: center;
+  background-image: url(/assets/img/YZY-GAP-x-Balenciaga.jpeg);
+  background-position-y: 10%;
 }
 
 .offer__data{
   padding: 4rem 0 4rem 1.5rem;
+  color: #fff;
 }
 
 .offer__title{
@@ -435,7 +452,17 @@ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   justify-content: center;
   background-color: var(--dark-color-lighten);
   border-radius: .5rem;
-  padding: 2rem
+  padding: 2rem;
+  background-image: url(/assets/img/donda.jpeg);
+    background-size: cover;
+    background-position-x: center;
+    min-height: 300px;
+    background-position-y: 45%;
+}
+
+.new__mens:hover,
+.new__mens:focus {
+  transform: scale(1.02) !important;
 }
 
 .new__mens-img{
@@ -451,6 +478,9 @@ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 .new__price{
   display: block;
   margin-bottom: var(--mb-3);
+}
+.new__mens .button-light{
+  color: #fff;
 }
 
 .new__sneaker{
@@ -563,9 +593,7 @@ transition: .3s;
 /* ===== MEDIA QUERIES=====*/
 
 @media screen and (min-width: 576px) {
-  .collection__container {
-    grid-template-columns: 415px;
-  }
+  
 
   .collection__img {
     width: 260px;
@@ -670,7 +698,8 @@ transition: .3s;
   }
 
   .collection__container {
-    grid-template-columns: repeat(2, 415px);
+    grid-template-columns: repeat(2, 380px) 200px;
+    grid-template-areas: "a b c";
   }
 
   .new__container {
@@ -688,3 +717,32 @@ transition: .3s;
   }
 }
 
+@media screen and (max-width: 600px) {
+.collection__container{
+  grid-template-areas:
+        "a"
+        "b"
+        "c";
+}
+.collection__card:last-child{
+  background-position-y:bottom;
+}
+}
+
+/* @media (min-width: 600px) and (max-width: 768px) {
+
+} */
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .collection__container{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "a c"
+        "b c";
+  }
+  .collection__card:last-child{
+    min-height: 100%;
+  }
+
+}
+  

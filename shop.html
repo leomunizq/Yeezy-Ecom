@@ -55,11 +55,19 @@
     <main class="l-main">
       <section class="product-detail">
         <div class="imagery">
-          <img
-            src="/assets/images/yeezy-black.png"
+          <!-- <img
+            src="/assets/img/spin1/yeezy-cinder-img1.png"
             alt="Yeezy Black"
             class="image"
-          />
+          /> -->
+
+          <div
+            id="yeezy"
+            class="cloudimage-360 image"
+            data-folder="http://127.0.0.1:5500/assets/img/spin1/"
+            data-filename-x="yeezy-cinder-img{index}.png"
+            data-amount-x="36"
+          ></div>
         </div>
         <div class="detail">
           <h1>Yeezy</h1>
@@ -81,10 +89,10 @@
                 <button
                   type="button"
                   class="colour black selected"
-                  data-name="black"
+                  data-name="cinder"
                   data-colour="#212121"
                 >
-                  Black
+                  Cinder
                 </button>
               </div>
               <div class="btn_wrap">
@@ -92,7 +100,7 @@
                   type="button"
                   class="colour glow"
                   data-name="glow"
-                  data-colour="#bfdb70"
+                  data-colour="#89cd6d"
                 >
                   Glow
                 </button>
@@ -100,11 +108,11 @@
               <div class="btn_wrap">
                 <button
                   type="button"
-                  class="colour sulfur"
-                  data-name="sulfur"
-                  data-colour="#747c2d"
+                  class="colour beluga"
+                  data-name="beluga"
+                  data-colour="#706866"
                 >
-                  Sulfur
+                  Beluga
                 </button>
               </div>
               <div class="btn_wrap">
@@ -213,11 +221,23 @@
               .querySelector('.colours .colour.selected')
               .classList.remove('selected')
             this.classList.add('selected')
-            image_el.src = 'assets/images/yeezy-' + this.dataset.name + '.png'
+            image_el.src =
+              'assets/img/spin1/yeezy-' + this.dataset.name + '-img1.png'
             imagery_el.style.backgroundColor = this.dataset.colour
+
+            var element = document.querySelector('.cloudimage-360')
+            // element.setAttribute(
+            //   'data-filename-x',
+            //   'yeezy-' + this.dataset.name + '-img{index}.jpg'
+            // )
+            element.dataset.filenameX =
+              'yeezy-' + this.dataset.name + '-img{index}.png'
+
+            window.CI360.update(null, true)
           })
         }
       }
     </script>
+    <script src="https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/latest/js-cloudimage-360-view.min.js"></script>
   </body>
 </html>
