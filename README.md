@@ -2,11 +2,11 @@
 I decided to do a personal project, as I really like Yeezy sneakers, I decided to make an e-commerce based on this.
 
 I used:
-Grid-layout
-RevealJS
-SwipeJS
-and other javascript libs.
-Besides being 100% responsive.
+<br>Grid-layout
+<br>RevealJS
+<br>SwipeJS
+<br>and other javascript libs.
+<br>Besides being 100% responsive.
 
 
 The project is inspired by Marlon from bedimcode.
